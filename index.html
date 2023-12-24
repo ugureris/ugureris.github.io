@@ -1,36 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ugur Eris</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Websitesi</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(85, 107, 47, 0.096);
-}
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #b5b6a5;
+        display: flex;
+      }
 
-.container {
-    text-align: center;
-}
+      #sidebar {
+        background-color: #b5b6a5;
+        padding: 20px;
+        color: #000000;
+        width: 300px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: fixed;
+      }
 
-.container img {
-    max-width: 100%; 
-    height: auto; 
-}
+      .profile-photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      #sidebar h2 {
+        margin-bottom: 20px;
+      }
+
+      .nav-link {
+        padding: 20px;
+        color: #000000;
+        white-space: nowrap;
+      }
+
+      .nav-link:hover {
+        color: #3c3d3d;
+      }
+
+      h2 {
+        color: #17a2b8;
+      }
+
+      #content {
+        padding: 20px;
+        background-color: #d3d4c2;
+        flex-grow: 1;
+        margin-left: 300px;
+        position: relative;
+        z-index: 0;
+      }
+
+      #content-about {
+        padding: 40px 20px;
+        width: 900px;
+      }
+
+      #content section {
+        padding: 30px;
+        margin-bottom: 30px;
+      }
+
+      #education {
+        padding: 20px;
+        margin-bottom: 30px;
+        clear: both; /* Float elemanları temizle */
+      }
+
+      #education {
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .education-item {
+        margin-bottom: 30px; /* Her eğitim öğesi arasına ekstra boşluk bırakır */
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      #experience,
+      #skills,
+      #contact,
+      #linkedin,
+      #github {
+        margin-top: 30px; /* Diğer bölümlerle arasındaki boşluğu artırır */
+      }
+
+      .education-title {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333333;
+      }
+
+      .education-date {
+        color: #555555;
+      }
+
+      .education-description {
+        color: #777777;
+      }
+      #certification {
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .certification-item {
+        margin-bottom: 30px;
+        padding: 20px;
+        border-radius: 8px;
+      }
+
+      .certification-title {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333333;
+      }
+
+      .certification-date {
+        color: #555555;
+      }
+
+      .certification-organization {
+        color: #777777;
+        font-style: italic;
+      }
+
+      .certification-description {
+        color: #888888;
+      }
+
+      #skills {
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .skills-list {
+        list-style-type: none;
+        padding: 20px;
+      }
+
+      .skills-list li {
+        background-color: #6d926da6;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: inline-block; /* Becerileri yan yana sıralar */
+        margin-right: 10px;
+      }
+
+      .skills-list li:last-child {
+        margin-right: 0;
+      }
+
+      #contact {
+        padding: 20px;
+        margin-bottom: 30px;
+        background-color: #d3d4c2; /* Sayfa arka plan rengi */
+      }
+
+      .contact-info {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .contact-info p {
+        margin: 5px 0;
+      }
+
+      .contact-form label {
+        display: block;
+        margin-top: 10px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .contact-form button {
+        background-color: #17a2b8;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .contact-form button:hover {
+        background-color: #117a8b;
+      }
     </style>
-</head>
-<body>
-    <div class="container">
-    <img style="justify-content: center;" src="cv.png" alt="">
-    <p><a href="https://drive.google.com/drive/folders/125QYQISi7hwRmMGWqwcYkOeSW3FjF_SK?usp=sharing" download>CV'yi İndir</a></p>
-    <p><a href="https://www.linkedin.com/in/ugureris/" download>LinkedIn</a></p>
-    <p><a href="https://github.com/ugureris" download>GitHub</a></p>
-
+  </head>
+  <body>
+    <div id="sidebar">
+      <img src="1.jpg" alt="Your Photo" class="profile-photo" />
+      <h2>Menü</h2>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#about">About me</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#education">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#certification">Certification</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#linkedin">LinkedIn</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#github">GitHub</a></li>
+      </ul>
     </div>
 
-</body>
+    <div id="content" style="width: 100%">
+      <!-- Sağ içerik (content) -->
+      <section id="about">
+        <h2>About me</h2>
+        <p id="content-about">
+          I am a hard worker and open to self-development. Being a software
+          developer has been one of my goals for a long time. I have been
+          training to be a developer by taking courses online for 1 year.You can
+          see the projects I have done to improve myself on my github account.
+          <br />
+          There are courses that I actively attend, generally their content is
+          Java. I am trying to improve myself as much as I can to become a
+          Backend Developer..
+        </p>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+
+        <div class="education-item">
+          <p class="education-title">
+            Associate's Degree in Computer Programming
+          </p>
+          <p class="education-date">Graduated in Jun 2024</p>
+          <p class="education-description">
+            Anadolu University , Eskisehir, Turkey
+          </p>
+        </div>
+
+        <div class="education-item">
+          <p class="education-title">Bachelor's Degree in Audiology</p>
+          <p class="education-date">Graduated in June 2015</p>
+          <p class="education-description">
+            Istanbul Gelisim University, Istanbul, Turkey
+          </p>
+        </div>
+      </section>
+
+      <section id="certification">
+        <h2>Certification</h2>
+        <div class="certification-item">
+          <p class="certification-title">Java Backend Development</p>
+          <p class="certification-date">Issued in November 2023</p>
+          <p class="certification-organization">
+            UPoD Digital Future Community
+          </p>
+          <p class="certification-description">
+            A brief description of the certification and your achievements.
+          </p>
+        </div>
+
+        <div class="certification-item">
+          <p class="certification-title">Full Stack Development</p>
+          <p class="certification-date">Issued in November 2023</p>
+          <p class="certification-organization">Patika.dev & Kodluyoruz</p>
+          <p class="certification-description">
+            Details about the certification and your role or projects.
+          </p>
+        </div>
+
+        <div class="certification-item">
+          <p class="certification-title">
+            Backend Web Development Path with Beginner Java
+          </p>
+          <p class="certification-date">Issued in December 2023</p>
+          <p class="certification-organization">Patika.dev</p>
+          <p class="certification-description">
+            Details about the certification and your role or projects.
+          </p>
+        </div>
+
+        <div class="certification-item">
+          <p class="certification-title">SQL Bootcamp</p>
+          <p class="certification-date">Issued in July 2023</p>
+          <p class="certification-organization">Techcareer.net</p>
+          <p class="certification-description">
+            Details about the certification and your role or projects.
+          </p>
+        </div>
+
+        <div class="certification-item">
+          <p class="certification-title">C# Bootcamp</p>
+          <p class="certification-date">Issued in May 2023</p>
+          <p class="certification-organization">Techcareer.net</p>
+          <p class="certification-description">
+            Details about the certification and your role or projects.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+
+        <ul class="skills-list">
+          <li>Java</li>
+          <li>Spring Framework</li>
+          <li>Object - Oriented Programming</li>
+          <li>JDBC</li>
+          <li>JavaFX</li>
+          <li>Data Structures and Algorithms</li>
+          <li>HTML5, CSS3, JavaScript</li>
+          <li>Bootstrap</li>
+          <li>React.js</li>
+          <li>Git - GitHub</li>
+          <li>Database Management</li>
+          <li>MySQL</li>
+          <li>PostgreSQL</li>
+          <li>Power BI Visualization</li>
+          <li>C#</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+
+        <div class="contact-info">
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:ugureris82@gmail.com">ugureris82@gmail.com</a>
+          </p>
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:+905435434275">+90 (543) 543-4275</a>
+          </p>
+          <p><strong>Address:</strong> Odunpazari, Eskisehir, Turkey</p>
+        </div>
+      </section>
+      <section id="linkedin">
+        <h2>LinkedIn</h2>
+        <p>
+          Connect with me on LinkedIn:
+          <a href="https://www.linkedin.com/in/ugureris" target="_blank"
+            >LinkedIn Profile</a
+          >
+        </p>
+      </section>
+
+      <section id="github">
+        <h2>GitHub</h2>
+        <p>
+          Check out my projects on GitHub:
+          <a href="https://github.com/ugureris" target="_blank"
+            >GitHub Profile</a
+          >
+        </p>
+      </section>
+    </div>
+
+    <!-- Bootstrap JS ve jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>
