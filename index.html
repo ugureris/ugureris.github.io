@@ -7,9 +7,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    
 
-    <title>CV Websitesi</title>
+    <title>CV Website</title>
     <!-- Bootstrap CSS -->
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -152,6 +151,40 @@
       .certification-description {
         color: #888888;
       }
+      #projects {
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .project-item {
+        margin-bottom: 30px;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      h2 {
+        color: #333;
+      }
+
+      .project-item h3 {
+        color: #2d3816fe;
+      }
+
+      .project-item p,
+      .project-item ul,
+      .project-item ol {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .project-item ul,
+      .project-item ol {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .project-item li {
+        margin-bottom: 5px;
+      }
 
       #skills {
         padding: 20px;
@@ -220,35 +253,40 @@
         background-color: #117a8b;
       }
       @media (max-width: 768px) {
-    #sidebar {
-      width: 0;
-      overflow: hidden;
-    }
+        #overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5); /* Açık renkli overlay */
+          z-index: 1;
+        }
 
-    #content {
-      margin-left: 0;
-    }
+        #sidebar.active + #overlay {
+          display: block;
+        }
 
-    #sidebar, #content {
-      position: relative;
-    }
+        #sidebar.active {
+          width: 250px; /* Veya istediğiniz genişlik */
+        }
 
-    #menu-toggle {
-      display: block;
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1;
-    }
-  }
+        #content {
+          margin-left: 0;
+          width: 100%;
+        }
 
+        body {
+          overflow-x: hidden; /* Sayfa genişliği menüden daha küçük olduğunda yatay kaydırmayı engelle */
+        }
+      }
     </style>
   </head>
   <body>
-
     <div id="sidebar">
       <img src="1.jpg" alt="Your Photo" class="profile-photo" />
-      <h2>Menü</h2>
+      <h2>Menu</h2>
       <ul class="nav flex-column">
         <li class="nav-item"><a class="nav-link" href="#about">About me</a></li>
         <li class="nav-item">
@@ -256,6 +294,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#certification">Certification</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#skills">Skills</a>
@@ -270,8 +311,7 @@
       </ul>
     </div>
 
-    <div id="menu-toggle">&#9776; Menu</div>
-
+    <div id="menu-toggle" class="d-block d-md-none">&#9776; Menu</div>
     <div id="content" style="width: 100%">
       <!-- Sağ içerik (content) -->
       <section id="about">
@@ -282,9 +322,10 @@
           training to be a developer by taking courses online for 1 year.You can
           see the projects I have done to improve myself on my github account.
           <br />
+          <br />
           There are courses that I actively attend, generally their content is
           Java. I am trying to improve myself as much as I can to become a
-          Backend Developer..
+          Backend Developer.
         </p>
       </section>
 
@@ -319,7 +360,12 @@
             UPoD Digital Future Community
           </p>
           <p class="certification-description">
-            A brief description of the certification and your achievements.
+            I took coding lessons in various fields in nearly 2000 hours of
+            lessons. Such as; Java, Object Oriented Programming, Data Structures
+            and Algorithms, Developer Toolbox, JDBC, SQL, Agility and Career
+            Development Academy. These courses were taught by expert instructors
+            in the field. Java lessons given by Akın Kaldıroğlu. Active lab
+            sessions were conducted to reinforce the courses we took.
           </p>
         </div>
 
@@ -328,7 +374,10 @@
           <p class="certification-date">Issued in November 2023</p>
           <p class="certification-organization">Patika.dev & Kodluyoruz</p>
           <p class="certification-description">
-            Details about the certification and your role or projects.
+            To reinforce the lessons learned, continuous assignments were given.
+            Weekly live sessions were held for review, covering courses in Java,
+            Object-Oriented Programming , Data Structures and Algorithms, SQL,
+            HTML, CSS, JavaScript, and React.
           </p>
         </div>
 
@@ -338,26 +387,209 @@
           </p>
           <p class="certification-date">Issued in December 2023</p>
           <p class="certification-organization">Patika.dev</p>
-          <p class="certification-description">
-            Details about the certification and your role or projects.
-          </p>
         </div>
 
         <div class="certification-item">
           <p class="certification-title">SQL Bootcamp</p>
           <p class="certification-date">Issued in July 2023</p>
           <p class="certification-organization">Techcareer.net</p>
-          <p class="certification-description">
-            Details about the certification and your role or projects.
-          </p>
         </div>
 
         <div class="certification-item">
           <p class="certification-title">C# Bootcamp</p>
           <p class="certification-date">Issued in May 2023</p>
           <p class="certification-organization">Techcareer.net</p>
-          <p class="certification-description">
-            Details about the certification and your role or projects.
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-item">
+          <h3><strong> Hotel Reservation System </strong></h3>
+          <p>
+            <strong>UPoD Digital Future Community</strong> Graduation Project
+          </p>
+
+          <p>
+            The Hotel Reservation System is a comprehensive JavaFX-based
+            application designed for managing various aspects of hotel
+            operations. This project allows seamless handling of rooms,
+            customers, reservations, room features, and additional services. The
+            integration of JDBC and MySQL ensures a robust database connection,
+            enhancing the reliability of the system.
+          </p>
+          <h4>Key Features:</h4>
+          <ul>
+            <li>
+              Efficient management of rooms, customers, reservations, room
+              features, and additional services.
+            </li>
+            <li>
+              Dynamic addition, update, and deletion of room-related
+              information.
+            </li>
+            <li>
+              Integration of JavaFX for a user-friendly and interactive
+              graphical interface.
+            </li>
+            <li>
+              JDBC and MySQL used for establishing and maintaining a secure
+              database connection.
+            </li>
+          </ul>
+          <h4>Technologies Used:</h4>
+          <ul>
+            <li>JavaFX for the graphical user interface.</li>
+            <li>
+              JDBC (Java Database Connectivity) for database interactions.
+            </li>
+            <li>MySQL for database management.</li>
+          </ul>
+          <p>
+            GitHub Project Link:
+            <a
+              href="https://github.com/ugureris/HotelReservationSystem"
+              target="_blank"
+              >Hotel Reservation System</a
+            >
+          </p>
+        </div>
+
+        <div class="project-item">
+          <h3><strong> Console Calculator Application </strong></h3>
+          <p><strong>UPoD Digital Future Community</strong> Midterm Project</p>
+
+          <p>
+            This project encompasses a console-based calculator application
+            developed in the Java programming language. In addition to basic
+            arithmetic operations, it features an extensive set of
+            functionalities, including square root extraction, exponentiation,
+            as well as trigonometric functions such as sine, cosine, and
+            tangent. Users can leverage this calculator application to perform
+            complex mathematical calculations.
+          </p>
+          <h4>Project Features:</h4>
+          <ul>
+            <li>
+              Fundamental four operations (addition, subtraction,
+              multiplication, division).
+            </li>
+            <li>
+              Mathematical functions like square root extraction and
+              exponentiation.
+            </li>
+            <li>
+              Trigonometric functions including sine, cosine, and tangent.
+            </li>
+            <li>Algorithm considering the precedence of operations.</li>
+            <li>User-friendly console interface.</li>
+          </ul>
+          <h4>Technologies and Tools:</h4>
+          <ul>
+            <li>Java programming language.</li>
+            <li>
+              Solely utilizing Java's standard libraries; no external libraries
+              are required.
+            </li>
+          </ul>
+          <p>
+            GitHub Project Link:
+            <a
+              href="https://github.com/ugureris/proje/tree/main/proje/capstone-project-1-ugureris"
+              target="_blank"
+              >Console Calculator Application</a
+            >
+          </p>
+        </div>
+
+        <div class="project-item">
+          <h3>
+            <strong>Car Management System </strong>
+          </h3>
+          <p><strong>Patika.dev & Kodluyoruz</strong> Graduation Project</p>
+
+          <p>
+            The Car Management System is a full-stack web application that
+            allows users to register, log in, and manage their cars. Developed
+            using Spring, Hibernate, React, and MySQL, this project provides a
+            seamless and secure experience for users to keep track of their
+            cars.
+          </p>
+          <h4>Key Features:</h4>
+          <ul>
+            <li>
+              User authentication and authorization with Sign Up and Login
+              functionalities.
+            </li>
+            <li>
+              Secure storage of user data and password hashing using Spring
+              Security.
+            </li>
+            <li>
+              Intuitive and responsive user interface developed with React.
+            </li>
+            <li>
+              Ability for users to add, edit, and delete their cars with
+              relevant details.
+            </li>
+            <li>
+              Integration of Spring Boot for backend development, Hibernate for
+              database management, and MySQL for data storage.
+            </li>
+          </ul>
+          <h4>Technologies Used:</h4>
+          <ul>
+            <li>Spring Framework (Spring Boot)</li>
+            <li>Hibernate for data persistence</li>
+            <li>React for the frontend</li>
+            <li>Spring Security for authentication and authorization</li>
+            <li>MySQL for database management</li>
+          </ul>
+          <p>
+            GitHub Project Link:
+            <a href="https://github.com/ugureris/FullStackProje" target="_blank"
+              >Car Management System</a
+            >
+          </p>
+        </div>
+
+        <div class="project-item">
+          <h3><strong> Market Analysis Project</strong></h3>
+          <p><strong>Techcareer.net</strong> Graduation Project</p>
+          <p>
+            This project, conducted using AWS, PostgreSQL, and Power BI, offers
+            a comprehensive market analysis based on real market data in Turkey.
+            In the initial phase of the project, the real market data file from
+            Turkey was uploaded to AWS S3 Buckets and subsequently integrated
+            into the PostgreSQL database.
+          </p>
+          <h4>Key Steps of the Project:</h4>
+          <ol>
+            <li>Uploading real market data from Turkey to AWS S3 Buckets.</li>
+            <li>
+              Extracting data into fact and dimension tables using PostgreSQL.
+            </li>
+            <li>Writing desired queries and analyzing the data.</li>
+            <li>Joining tables using Power BI and creating visual reports.</li>
+          </ol>
+          <h4>Layers of the Project:</h4>
+          <ul>
+            <li>AWS: Used for storing and managing real market data.</li>
+            <li>
+              PostgreSQL: The database used for effectively extracting and
+              analyzing data.
+            </li>
+            <li>
+              Power BI: Utilized for visualizing data and creating meaningful
+              reports.
+            </li>
+          </ul>
+          <p>
+            GitHub Project Link:
+            <a href="https://github.com/ugureris/SQLProject" target="_blank"
+              >Market Analysis Project</a
+            >
           </p>
         </div>
       </section>
@@ -424,17 +656,24 @@
       </section>
     </div>
 
-    <script>
-      // Mobil buton ve menü kontrolü
-      $(document).ready(function () {
-        $("#menu-toggle").click(function () {
-          $("#sidebar").animate({ width: "toggle" }, 300);
-        });
-      });
-    </script>
     <!-- Bootstrap JS ve jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#menu-toggle").click(function () {
+          $("#sidebar").toggleClass("active");
+        });
+
+        // Menü dışında bir yere tıklandığında menüyü kapat
+        $(document).on("click", function (e) {
+          if (!$(e.target).closest("#sidebar, #menu-toggle").length) {
+            $("#sidebar").removeClass("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
