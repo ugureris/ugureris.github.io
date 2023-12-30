@@ -19,7 +19,7 @@
         justify-content: center;
         text-align: center;
         position: fixed;
-        transition: width 0.3s; /* Animasyon ekledik */
+        transition: width 0.3s; 
       }
 
       .profile-photo {
@@ -53,8 +53,8 @@
         flex-grow: 1;
         position: relative;
         z-index: 0;
-        margin-left: 300px; /* Yan menü geniş olduğu sürece bu değeri set et */
-        transition: margin-left 0.3s; /* Animasyon ekledik */
+        margin-left: 300px;
+        transition: margin-left 0.3s;
       }
       #content-about {
         padding: 40px 20px;
@@ -67,7 +67,7 @@
       #education {
         padding: 20px;
         margin-bottom: 30px;
-        clear: both; /* Float elemanları temizle */
+        clear: both;
       }
 
       #education {
@@ -76,7 +76,7 @@
       }
 
       .education-item {
-        margin-bottom: 30px; /* Her eğitim öğesi arasına ekstra boşluk bırakır */
+        margin-bottom: 30px;
         padding: 20px;
         border-radius: 8px;
       }
@@ -86,7 +86,7 @@
       #contact,
       #linkedin,
       #github {
-        margin-top: 30px; /* Diğer bölümlerle arasındaki boşluğu artırır */
+        margin-top: 30px; 
       }
 
       .education-title {
@@ -181,7 +181,7 @@
         border-radius: 8px;
         padding: 10px;
         margin-bottom: 10px;
-        display: inline-block; /* Becerileri yan yana sıralar */
+        display: inline-block;
         margin-right: 10px;
       }
 
@@ -192,7 +192,7 @@
       #contact {
         padding: 20px;
         margin-bottom: 30px;
-        background-color: #d3d4c2; /* Sayfa arka plan rengi */
+        background-color: #d3d4c2;
       }
 
       .contact-info {
@@ -240,7 +240,7 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba(0, 0, 0, 0.5); /* Açık renkli overlay */
+          background-color: rgba(0, 0, 0, 0.5);
           z-index: 1;
         }
 
@@ -249,7 +249,7 @@
         }
 
         #sidebar.active {
-          width: 250px; /* Veya istediğiniz genişlik */
+          width: 250px;
         }
 
         #content {
@@ -258,6 +258,6 @@
         }
 
         body {
-          overflow-x: hidden; /* Sayfa genişliği menüden daha küçük olduğunda yatay kaydırmayı engelle */
+          overflow-x: hidden;
         }
       }
